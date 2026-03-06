@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #00f2ff;
+  --color-secondary: #7000ff;
+  --color-accent: #ff00c8;
+  
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-spin-slow: spin 8s linear infinite;
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff;
+    }
+    to {
+      box-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff, 0 0 30px #00f2ff;
+    }
+  }
+}
+
+body {
+  background-color: #020617;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glowing-button {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glowing-button:hover {
+  box-shadow: 0 0 15px var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px currentColor;
+}
